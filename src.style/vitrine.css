@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Cor de fundo padrão */
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Para posicionar o botão de modo escuro */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px; /* Espaçamento interno para a barra de pesquisa */
+}
+
+.search-bar {
+    background-color: #333;
+    text-align: center;
+    width: 200px; /* Largura da barra de pesquisa */
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.dark-mode {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+}
+
+.vitrine {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto; /*Barra de rolagem da tela */
+    max-height: 70vh; /* Altura máxima da vitrine para evitar que ocupe toda a tela */
+}
+
+.certificados img {
+    width: 200px; /* Tamanho da miniatura*/
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.certificados img:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal img {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+
+
+
+
+/*dark mode*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Estilos para o modo escuro */
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+body.light {
+    background-color: white;
+    color: black;
+}
